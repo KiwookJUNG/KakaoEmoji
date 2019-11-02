@@ -17,13 +17,19 @@ class ImagePickerObjectDetector: UIViewController {
     var imgWidth : Int = 0
     var imgHeight : Int = 0
     
+    
+
+    @IBOutlet weak var btnName: UIButton!
+    
     @IBOutlet weak var imgView: UIImageView!
-    @IBAction func imgPick(_ sender: Any) {
+    @IBAction func imgPick(_ sender: UIButton) {
+        imgView.layer.sublayers?.removeAll()
         present(albumPicker, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
     
         albumPicker.allowsEditing = false
         albumPicker.delegate = self
@@ -46,8 +52,9 @@ extension ImagePickerObjectDetector: UINavigationControllerDelegate, UIImagePick
            guard let image = info[.originalImage] as? UIImage else {
                fatalError("이미지르 로드 할 수 없습니다.")
            }
-           
+        
            self.imgView.image = image
+        
            self.imgWidth = Int(self.view.bounds.size.width)
            self.imgHeight = Int(self.imgView.image?.size.height ?? 400)
            
@@ -62,6 +69,16 @@ extension ImagePickerObjectDetector: UINavigationControllerDelegate, UIImagePick
 }
 
 extension ImagePickerObjectDetector {
+    enum EmojiOrCat: String {
+        case apeach = "Apeach"
+        case tube = "Tube"
+        case ryan = "Ryan"
+        case benny = "Benny"
+        case white = "WhiteCat"
+        case black = "BlackCat"
+        case taby = "TabyCat"
+        case cheeze = "CheezeCat"
+    }
     func coreMLProcessing(image: CIImage) {
         
         // 모델 등록 - VNCoreMLModel(for:)
@@ -76,24 +93,35 @@ extension ImagePickerObjectDetector {
             guard let results = request.results as? [VNRecognizedObjectObservation] else {
                 return
             }
-            guard let firstItem = results.first else {
-                return
-            }
+//            guard let firstItem = results.first else {
+//                return
+//            }
             
-           // 바운딩 박스
-            let objectBounds = VNImageRectForNormalizedRect(firstItem.boundingBox, self?.imgWidth ?? 0, self?.imgHeight ?? 0)
-            
-            print(results)
-            
-            guard let shapeLayer = self?.createRoundedRectLayerWithBounds(objectBounds) else {
-                return
-            }
-        
+            for objectObservation in results {
+                let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, self?.imgWidth ?? 0, self?.imgHeight ?? 0)
+                    
+                    print(objectObservation.boundingBox)
+                    print(objectObservation.confidence)
+                    
+                    guard let nameIdentifier = objectObservation.labels.first?.identifier else {
+                        return
+                    }
+                    
+                    guard let shapeLayer = self?.createRoundedRectLayerWithBounds(bounds: objectBounds, name: nameIdentifier) else {
+                        return
+                    }
+                
 
-            
-            DispatchQueue.main.async { [weak self] in
-                self?.view.layer.addSublayer(shapeLayer)
+                    
+                    DispatchQueue.main.async { [weak self] in
+                        //print(firstItem.labels.first?.identifier)
+                        //self?.btnName.setTitle(nameIdentifier, for: .normal)
+                        self?.imgView.layer.addSublayer(shapeLayer)
+                    }
             }
+            
+        
+            
         }
         
         
@@ -109,16 +137,35 @@ extension ImagePickerObjectDetector {
     }
     
     // 바운딩 박스에 들어갈 텍스트 및 정확도 설정
-    func createRoundedRectLayerWithBounds(_ bounds: CGRect) -> CALayer {
+    func createRoundedRectLayerWithBounds(bounds: CGRect, name: String) -> CALayer {
         let shapeLayer = CALayer()
-        print(bounds)
-        var newBounds = bounds
-        newBounds.origin.y += newBounds.origin.y
-        shapeLayer.bounds = newBounds
+       
+        var color : CGColor = CGColor(srgbRed: 0.5, green: 0.5, blue: 0.5, alpha: 0.3)
+        if let emojiOrCat = EmojiOrCat.init(rawValue: name) {
+            color = boxColor(emojiOrCat)
+        }
+
+        shapeLayer.bounds = bounds
         shapeLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
         shapeLayer.name = "Found Object"
-        shapeLayer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.00, 0.58, 0.48, 0.4])
+        shapeLayer.backgroundColor = color
+       
         shapeLayer.cornerRadius = 7
         return shapeLayer
     }
+    
+    func boxColor(_ emojiOrCat: EmojiOrCat) -> CGColor {
+        switch emojiOrCat {
+        case .apeach: return CGColor(srgbRed: 1.00, green: 0.00, blue: 0.72, alpha: 0.3)
+        case .tube: return CGColor(srgbRed: 0.66, green: 0.53, blue: 0.07, alpha: 0.3)
+        case .benny: return CGColor(srgbRed: 0.89, green: 0.70, blue: 0.70, alpha: 0.3)
+        case .taby: return CGColor(srgbRed: 0.20, green: 0.01, blue: 0.04, alpha: 0.3)
+        case .black: return CGColor(srgbRed: 0.53, green: 0.18, blue: 0.66, alpha: 0.3)
+        case .cheeze: return CGColor(srgbRed: 0.90, green: 0.88, blue: 0.39, alpha: 0.3)
+        case .ryan: return CGColor(srgbRed: 0.90, green: 0.88, blue: 0.00, alpha: 0.3)
+        case .white: return CGColor(srgbRed: 0.82, green: 0.93, blue: 0.93, alpha: 0.3)
+        }
+    }
 }
+
+

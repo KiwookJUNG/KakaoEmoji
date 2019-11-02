@@ -108,6 +108,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="IWw-ZF-syz"/>
                     <connections>
+                        <outlet property="btnName" destination="O9l-Yu-O4h" id="Mp7-QG-nmN"/>
                         <outlet property="imgView" destination="pvA-c0-NsK" id="QrR-PE-2o7"/>
                     </connections>
                 </viewController>
@@ -121,6 +122,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Jl7-bu-a7k" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7zb-bD-1RA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
