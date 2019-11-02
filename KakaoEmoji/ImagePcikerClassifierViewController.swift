@@ -10,7 +10,7 @@ import UIKit
 import CoreML
 import Vision
 
-class ViewController: UIViewController {
+class ImagePcikerClassifierViewController: UIViewController {
 
     @IBAction func imgPick(_ sender: Any) {
         
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+extension ImagePcikerClassifierViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
@@ -65,7 +65,7 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
     
 }
 
-extension ViewController {
+extension ImagePcikerClassifierViewController {
     
     func coreMLProcessing(image: CIImage) {
         
