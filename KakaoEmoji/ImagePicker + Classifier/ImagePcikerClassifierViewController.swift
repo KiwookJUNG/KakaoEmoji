@@ -68,7 +68,7 @@ extension ImagePcikerClassifierViewController {
     func coreMLProcessing(image: CIImage) {
         
         // 모델 등록 - VNCoreMLModel(for:)
-        guard let model = try? VNCoreMLModel(for: TubeApeach().model) else {
+        guard let model = try? VNCoreMLModel(for: EmojiAndCatClassifier().model) else {
             fatalError("TubeApeach ML Model을 로드할 수 없습니다.")
         }
         

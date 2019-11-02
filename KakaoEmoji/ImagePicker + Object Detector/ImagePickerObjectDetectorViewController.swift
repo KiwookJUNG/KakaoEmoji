@@ -24,7 +24,7 @@ class ImagePickerObjectDetector: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         albumPicker.allowsEditing = false
         albumPicker.delegate = self
         albumPicker.sourceType = .photoLibrary
@@ -49,8 +49,8 @@ extension ImagePickerObjectDetector: UINavigationControllerDelegate, UIImagePick
            
            self.imgView.image = image
            self.imgWidth = Int(self.view.bounds.size.width)
-           //self.imgHeight = Int(self.view.bounds.size.height)
-           self.imgHeight = 538
+           self.imgHeight = Int(self.imgView.image?.size.height ?? 400)
+           
            guard let ciImage = CIImage(image: image) else {
                fatalError("UIImage를 CIImage로 전환할 수 없습니다.")
            }
@@ -65,7 +65,7 @@ extension ImagePickerObjectDetector {
     func coreMLProcessing(image: CIImage) {
         
         // 모델 등록 - VNCoreMLModel(for:)
-        guard let model = try? VNCoreMLModel(for: YOLOv3().model) else {
+        guard let model = try? VNCoreMLModel(for: EmojiAndCat_1().model) else {
             fatalError("TubeApeach ML Model을 로드할 수 없습니다.")
         }
    
