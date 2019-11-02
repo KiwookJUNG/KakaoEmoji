@@ -13,17 +13,8 @@ import Vision
 class ImagePcikerClassifierViewController: UIViewController {
 
     @IBAction func imgPick(_ sender: Any) {
-        
-       let albumPicker = UIImagePickerController()
-        albumPicker.allowsEditing = false
-        albumPicker.delegate = self
-        albumPicker.sourceType = .photoLibrary
-                     
-        albumPicker.modalPresentationStyle = .fullScreen
-                     
+    
         present(albumPicker, animated: true)
-        
-        
     }
     @IBOutlet weak var imgView: UIImageView!
     
@@ -35,6 +26,13 @@ class ImagePcikerClassifierViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let albumPicker = UIImagePickerController()
+        albumPicker.allowsEditing = false
+        albumPicker.delegate = self
+        albumPicker.sourceType = .photoLibrary
+                     
+        albumPicker.modalPresentationStyle = .fullScreen
     }
 
 
@@ -70,7 +68,7 @@ extension ImagePcikerClassifierViewController {
     func coreMLProcessing(image: CIImage) {
         
         // 모델 등록 - VNCoreMLModel(for:)
-        guard let model = try? VNCoreMLModel(for: KakaoEmoji_1().model) else {
+        guard let model = try? VNCoreMLModel(for: TubeApeach().model) else {
             fatalError("TubeApeach ML Model을 로드할 수 없습니다.")
         }
         
