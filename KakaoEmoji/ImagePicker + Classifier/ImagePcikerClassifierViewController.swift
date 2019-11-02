@@ -12,14 +12,15 @@ import Vision
 
 class ImagePcikerClassifierViewController: UIViewController {
 
+    
+    let imgPicker = UIImagePickerController()
+    
     @IBAction func imgPick(_ sender: Any) {
-    
-        present(albumPicker, animated: true)
+        present(imgPicker, animated: true)
     }
+    
     @IBOutlet weak var imgView: UIImageView!
-    
     @IBOutlet weak var nameLbl: UILabel!
-    
     @IBOutlet weak var confidenceLbl: UILabel!
     
     
@@ -27,12 +28,11 @@ class ImagePcikerClassifierViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let albumPicker = UIImagePickerController()
-        albumPicker.allowsEditing = false
-        albumPicker.delegate = self
-        albumPicker.sourceType = .photoLibrary
+        imgPicker.allowsEditing = false
+        imgPicker.delegate = self
+        imgPicker.sourceType = .photoLibrary
                      
-        albumPicker.modalPresentationStyle = .fullScreen
+        imgPicker.modalPresentationStyle = .fullScreen
     }
 
 
@@ -77,7 +77,6 @@ extension ImagePcikerClassifierViewController {
         // 등록한 모델을 사용해서 이미지 분석을 요청 - VNCoreMLRequest(model:)
         let request = VNCoreMLRequest(model: model) { [weak self] request, error in
             
-            print(request.results)
             guard let results = request.results as? [VNClassificationObservation] else {
                 return
             }
