@@ -13,7 +13,7 @@
 		A0481F1C236BF03D00E95502 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0481F1A236BF03D00E95502 /* Main.storyboard */; };
 		A0481F1E236BF04000E95502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0481F1D236BF04000E95502 /* Assets.xcassets */; };
 		A0481F21236BF04000E95502 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0481F1F236BF04000E95502 /* LaunchScreen.storyboard */; };
-		A0481F29236BF18400E95502 /* KakaoEmoji 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A0481F28236BF18400E95502 /* KakaoEmoji 1.mlmodel */; };
+		A0F452D5236D432000090D01 /* TubeApeach.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A0F452D4236D432000090D01 /* TubeApeach.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +25,7 @@
 		A0481F1D236BF04000E95502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0481F20236BF04000E95502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0481F22236BF04000E95502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0481F28236BF18400E95502 /* KakaoEmoji 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "KakaoEmoji 1.mlmodel"; path = "../../../KakaoEmoji.mlproj/Models/KakaoEmoji 1.mlmodel"; sourceTree = "<group>"; };
-		A0F452D3236D42C400090D01 /* KakaoEmoji 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "KakaoEmoji 1.mlmodel"; sourceTree = "<group>"; };
+		A0F452D4236D432000090D01 /* TubeApeach.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TubeApeach.mlmodel; path = "../../../../카카오캐릭터/Kakao.mlproj/Models/TubeApeach.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +61,6 @@
 				A0F452D2236D42AC00090D01 /* ImagePicker + Classifier */,
 				A0481F14236BF03D00E95502 /* AppDelegate.swift */,
 				A0481F16236BF03D00E95502 /* SceneDelegate.swift */,
-				A0481F28236BF18400E95502 /* KakaoEmoji 1.mlmodel */,
 				A0481F1A236BF03D00E95502 /* Main.storyboard */,
 				A0481F1D236BF04000E95502 /* Assets.xcassets */,
 				A0481F1F236BF04000E95502 /* LaunchScreen.storyboard */,
@@ -74,7 +72,7 @@
 		A0F452D2236D42AC00090D01 /* ImagePicker + Classifier */ = {
 			isa = PBXGroup;
 			children = (
-				A0F452D3236D42C400090D01 /* KakaoEmoji 1.mlmodel */,
+				A0F452D4236D432000090D01 /* TubeApeach.mlmodel */,
 				A0481F18236BF03D00E95502 /* ImagePcikerClassifierViewController.swift */,
 			);
 			path = "ImagePicker + Classifier";
@@ -151,7 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0481F29236BF18400E95502 /* KakaoEmoji 1.mlmodel in Sources */,
+				A0F452D5236D432000090D01 /* TubeApeach.mlmodel in Sources */,
 				A0481F19236BF03D00E95502 /* ImagePcikerClassifierViewController.swift in Sources */,
 				A0481F15236BF03D00E95502 /* AppDelegate.swift in Sources */,
 				A0481F17236BF03D00E95502 /* SceneDelegate.swift in Sources */,
