@@ -68,7 +68,7 @@ extension ImagePcikerClassifierViewController {
     func coreMLProcessing(image: CIImage) {
         
         // 모델 등록 - VNCoreMLModel(for:)
-        guard let model = try? VNCoreMLModel(for: EmojiAndCatClassifier().model) else {
+        guard let model = try? VNCoreMLModel(for: newEmojiAndCat().model) else {
             fatalError("TubeApeach ML Model을 로드할 수 없습니다.")
         }
         
@@ -77,16 +77,22 @@ extension ImagePcikerClassifierViewController {
         // 등록한 모델을 사용해서 이미지 분석을 요청 - VNCoreMLRequest(model:)
         let request = VNCoreMLRequest(model: model) { [weak self] request, error in
             
-            guard let results = request.results as? [VNClassificationObservation] else {
+            guard let results = request.results as? [VNRecognizedObjectObservation] else {
                 return
             }
-            guard let firstItem = results.first else {
+           
+            guard let objectObservation = results.first?.labels.first else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.nameLbl.text = "인식된 물체 없음"
+                    self?.confidenceLbl.text = "0.00"
+                }
                 return
             }
             
+            
             DispatchQueue.main.async { [weak self] in
-                self?.nameLbl.text = firstItem.identifier
-                self?.confidenceLbl.text = String(firstItem.confidence)
+                self?.nameLbl.text = objectObservation.identifier
+                self?.confidenceLbl.text = String(objectObservation.confidence)
             }
         }
         

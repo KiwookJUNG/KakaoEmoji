@@ -16,7 +16,6 @@
 		A0942F75236DAB6200D08ADD /* EmojiAndCatClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A0942F74236DAB6200D08ADD /* EmojiAndCatClassifier.mlmodel */; };
 		A0E84DA5236EA179000FA863 /* newEmojiAndCat.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A0E84DA4236EA179000FA863 /* newEmojiAndCat.mlmodel */; };
 		A0F452D8236D44AD00090D01 /* ImagePickerObjectDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F452D7236D44AD00090D01 /* ImagePickerObjectDetectorViewController.swift */; };
-		A0F452DA236D44ED00090D01 /* YOLOv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A0F452D9236D44ED00090D01 /* YOLOv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		A0942F74236DAB6200D08ADD /* EmojiAndCatClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = EmojiAndCatClassifier.mlmodel; path = "../../../../Emoji&Cat.mlproj/Models/EmojiAndCatClassifier.mlmodel"; sourceTree = "<group>"; };
 		A0E84DA4236EA179000FA863 /* newEmojiAndCat.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = newEmojiAndCat.mlmodel; path = ../../../../EmojiAndCat.mlproj/Models/newEmojiAndCat.mlmodel; sourceTree = "<group>"; };
 		A0F452D7236D44AD00090D01 /* ImagePickerObjectDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerObjectDetectorViewController.swift; sourceTree = "<group>"; };
-		A0F452D9236D44ED00090D01 /* YOLOv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = YOLOv3.mlmodel; path = ../../../../../Downloads/YOLOv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +86,6 @@
 		A0F452D6236D439000090D01 /* ImagePicker + Object Detector */ = {
 			isa = PBXGroup;
 			children = (
-				A0F452D9236D44ED00090D01 /* YOLOv3.mlmodel */,
 				A0E84DA4236EA179000FA863 /* newEmojiAndCat.mlmodel */,
 				A0F452D7236D44AD00090D01 /* ImagePickerObjectDetectorViewController.swift */,
 			);
@@ -166,7 +163,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0F452DA236D44ED00090D01 /* YOLOv3.mlmodel in Sources */,
 				A0E84DA5236EA179000FA863 /* newEmojiAndCat.mlmodel in Sources */,
 				A0F452D8236D44AD00090D01 /* ImagePickerObjectDetectorViewController.swift in Sources */,
 				A0481F19236BF03D00E95502 /* ImagePcikerClassifierViewController.swift in Sources */,
