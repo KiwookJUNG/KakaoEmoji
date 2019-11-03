@@ -69,20 +69,11 @@ extension ImagePickerObjectDetector: UINavigationControllerDelegate, UIImagePick
 }
 
 extension ImagePickerObjectDetector {
-    enum EmojiOrCat: String {
-        case apeach = "Apeach"
-        case tube = "Tube"
-        case ryan = "Ryan"
-        case benny = "Benny"
-        case white = "WhiteCat"
-        case black = "BlackCat"
-        case taby = "TabyCat"
-        case cheeze = "CheezeCat"
-    }
+    
     func coreMLProcessing(image: CIImage) {
         
         // 모델 등록 - VNCoreMLModel(for:)
-        guard let model = try? VNCoreMLModel(for: EmojiAndCat_1().model) else {
+        guard let model = try? VNCoreMLModel(for: newEmojiAndCat().model) else {
             fatalError("TubeApeach ML Model을 로드할 수 없습니다.")
         }
    
@@ -115,7 +106,7 @@ extension ImagePickerObjectDetector {
                     
                     DispatchQueue.main.async { [weak self] in
                         //print(firstItem.labels.first?.identifier)
-                        //self?.btnName.setTitle(nameIdentifier, for: .normal)
+                        self?.btnName.setTitle(nameIdentifier, for: .normal)
                         self?.imgView.layer.addSublayer(shapeLayer)
                     }
             }
@@ -153,6 +144,18 @@ extension ImagePickerObjectDetector {
         shapeLayer.cornerRadius = 7
         return shapeLayer
     }
+    
+    enum EmojiOrCat: String {
+        case apeach = "Apeach"
+        case tube = "Tube"
+        case ryan = "Ryan"
+        case benny = "Benny"
+        case white = "WhiteCat"
+        case black = "BlackCat"
+        case taby = "TabyCat"
+        case cheeze = "CheezeCat"
+    }
+    
     
     func boxColor(_ emojiOrCat: EmojiOrCat) -> CGColor {
         switch emojiOrCat {
