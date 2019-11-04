@@ -17,8 +17,8 @@ class ImagePickerObjectDetector: UIViewController {
     var imgWidth : Int = 0
     var imgHeight : Int = 0
     
+    let korean = Transrator().translator
     
-
     @IBOutlet weak var btnName: UIButton!
     
     @IBOutlet weak var imgView: UIImageView!
@@ -36,6 +36,7 @@ class ImagePickerObjectDetector: UIViewController {
         albumPicker.sourceType = .photoLibrary
                
         albumPicker.modalPresentationStyle = .fullScreen
+        
     }
 
 }
@@ -50,7 +51,7 @@ extension ImagePickerObjectDetector: UINavigationControllerDelegate, UIImagePick
            dismiss(animated: true, completion: nil)
            
            guard let image = info[.originalImage] as? UIImage else {
-               fatalError("이미지르 로드 할 수 없습니다.")
+               fatalError("이미지를 로드 할 수 없습니다.")
            }
         
            self.imgView.image = image
@@ -100,20 +101,18 @@ extension ImagePickerObjectDetector {
                     print(objectObservation.boundingBox)
                     print(objectObservation.confidence)
                     
-                    guard let nameIdentifier = objectObservation.labels.first?.identifier else {
+                guard let nameIdentifier = objectObservation.labels.first?.identifier, let koreanName = self?.korean[nameIdentifier] else {
                         return
-                    }
+                }
                     
-                    guard let shapeLayer = self?.createRoundedRectLayerWithBounds(bounds: objectBounds, name: nameIdentifier) else {
+                guard let shapeLayer = self?.createRoundedRectLayerWithBounds(bounds: objectBounds, name: nameIdentifier) else {
                         return
-                    }
-                
-                    
-
+                }
+         
                     
                     DispatchQueue.main.async { [weak self] in
                         //print(firstItem.labels.first?.identifier)
-                        self?.btnName.setTitle(nameIdentifier, for: .normal)
+                        self?.btnName.setTitle(koreanName, for: .normal)
                         self?.imgView.layer.addSublayer(shapeLayer)
                     }
             }
