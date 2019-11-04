@@ -10,7 +10,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ImagePcikerClassifierViewController" customModule="KakaoEmoji" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ImagePickerClassifierViewController" customModule="KakaoEmoji" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,10 +79,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pvA-c0-NsK">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="733"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="783"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-Yu-O4h">
-                                <rect key="frame" x="50" y="763" width="314" height="30"/>
+                                <rect key="frame" x="50" y="783" width="314" height="30"/>
                                 <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="0.32346960619999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2ut-LR-eLY"/>
@@ -95,14 +95,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="h6H-1j-h4l" firstAttribute="bottom" secondItem="O9l-Yu-O4h" secondAttribute="bottom" constant="20" id="3yW-wo-Xso"/>
+                            <constraint firstItem="h6H-1j-h4l" firstAttribute="bottom" secondItem="O9l-Yu-O4h" secondAttribute="bottom" id="3yW-wo-Xso"/>
                             <constraint firstItem="h6H-1j-h4l" firstAttribute="trailing" secondItem="O9l-Yu-O4h" secondAttribute="trailing" constant="50" id="KNw-FJ-1pB"/>
                             <constraint firstItem="pvA-c0-NsK" firstAttribute="leading" secondItem="btv-8l-cJp" secondAttribute="leading" id="RWQ-1f-pcM"/>
                             <constraint firstItem="pvA-c0-NsK" firstAttribute="top" secondItem="btv-8l-cJp" secondAttribute="top" id="c6U-Ju-vAK"/>
                             <constraint firstItem="O9l-Yu-O4h" firstAttribute="leading" secondItem="h6H-1j-h4l" secondAttribute="leading" constant="50" id="lKu-Zc-Wbu"/>
                             <constraint firstAttribute="trailing" secondItem="pvA-c0-NsK" secondAttribute="trailing" id="r8e-pf-JMU"/>
                             <constraint firstItem="O9l-Yu-O4h" firstAttribute="centerX" secondItem="btv-8l-cJp" secondAttribute="centerX" id="rZj-lp-jU5"/>
-                            <constraint firstItem="O9l-Yu-O4h" firstAttribute="top" secondItem="pvA-c0-NsK" secondAttribute="bottom" priority="750" constant="30" id="ytI-lK-O9d"/>
+                            <constraint firstItem="O9l-Yu-O4h" firstAttribute="top" secondItem="pvA-c0-NsK" secondAttribute="bottom" priority="750" id="ytI-lK-O9d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h6H-1j-h4l"/>
                     </view>
