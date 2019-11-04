@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pvA-c0-NsK">
-                                <rect key="frame" x="0.0" y="44" width="414" height="689"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="733"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-Yu-O4h">
                                 <rect key="frame" x="50" y="763" width="314" height="30"/>
@@ -98,7 +98,7 @@
                             <constraint firstItem="h6H-1j-h4l" firstAttribute="bottom" secondItem="O9l-Yu-O4h" secondAttribute="bottom" constant="20" id="3yW-wo-Xso"/>
                             <constraint firstItem="h6H-1j-h4l" firstAttribute="trailing" secondItem="O9l-Yu-O4h" secondAttribute="trailing" constant="50" id="KNw-FJ-1pB"/>
                             <constraint firstItem="pvA-c0-NsK" firstAttribute="leading" secondItem="btv-8l-cJp" secondAttribute="leading" id="RWQ-1f-pcM"/>
-                            <constraint firstItem="pvA-c0-NsK" firstAttribute="top" secondItem="h6H-1j-h4l" secondAttribute="top" id="c6U-Ju-vAK"/>
+                            <constraint firstItem="pvA-c0-NsK" firstAttribute="top" secondItem="btv-8l-cJp" secondAttribute="top" id="c6U-Ju-vAK"/>
                             <constraint firstItem="O9l-Yu-O4h" firstAttribute="leading" secondItem="h6H-1j-h4l" secondAttribute="leading" constant="50" id="lKu-Zc-Wbu"/>
                             <constraint firstAttribute="trailing" secondItem="pvA-c0-NsK" secondAttribute="trailing" id="r8e-pf-JMU"/>
                             <constraint firstItem="O9l-Yu-O4h" firstAttribute="centerX" secondItem="btv-8l-cJp" secondAttribute="centerX" id="rZj-lp-jU5"/>
