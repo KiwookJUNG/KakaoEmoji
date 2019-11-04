@@ -56,7 +56,7 @@ extension ImagePickerObjectDetector: UINavigationControllerDelegate, UIImagePick
            self.imgView.image = image
         
            self.imgWidth = Int(self.view.bounds.size.width)
-           self.imgHeight = Int(self.view.bounds.size.height - 200)
+           self.imgHeight = Int(self.view.bounds.size.height - 50)
            
            guard let ciImage = CIImage(image: image) else {
                fatalError("UIImage를 CIImage로 전환할 수 없습니다.")
@@ -80,7 +80,7 @@ extension ImagePickerObjectDetector {
         // 등록한 모델을 사용해서 이미지 분석을 요청 - VNCoreMLRequest(model:)
         let request = VNCoreMLRequest(model: model) { [weak self] request, error in
             
-            print(request.results)
+            //print(request.results)
             guard let results = request.results as? [VNRecognizedObjectObservation] else {
                 return
             }

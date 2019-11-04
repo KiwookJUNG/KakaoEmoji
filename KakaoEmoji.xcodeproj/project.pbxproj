@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A0481F15236BF03D00E95502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0481F14236BF03D00E95502 /* AppDelegate.swift */; };
 		A0481F17236BF03D00E95502 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0481F16236BF03D00E95502 /* SceneDelegate.swift */; };
-		A0481F19236BF03D00E95502 /* ImagePcikerClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0481F18236BF03D00E95502 /* ImagePcikerClassifierViewController.swift */; };
+		A0481F19236BF03D00E95502 /* ImagePickerClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0481F18236BF03D00E95502 /* ImagePickerClassifierViewController.swift */; };
 		A0481F1C236BF03D00E95502 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0481F1A236BF03D00E95502 /* Main.storyboard */; };
 		A0481F1E236BF04000E95502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0481F1D236BF04000E95502 /* Assets.xcassets */; };
 		A0481F21236BF04000E95502 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0481F1F236BF04000E95502 /* LaunchScreen.storyboard */; };
@@ -22,7 +22,7 @@
 		A0481F11236BF03D00E95502 /* KakaoEmoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KakaoEmoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0481F14236BF03D00E95502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0481F16236BF03D00E95502 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A0481F18236BF03D00E95502 /* ImagePcikerClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePcikerClassifierViewController.swift; sourceTree = "<group>"; };
+		A0481F18236BF03D00E95502 /* ImagePickerClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerClassifierViewController.swift; sourceTree = "<group>"; };
 		A0481F1B236BF03D00E95502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0481F1D236BF04000E95502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0481F20236BF04000E95502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				A0942F74236DAB6200D08ADD /* EmojiAndCatClassifier.mlmodel */,
-				A0481F18236BF03D00E95502 /* ImagePcikerClassifierViewController.swift */,
+				A0481F18236BF03D00E95502 /* ImagePickerClassifierViewController.swift */,
 			);
 			path = "ImagePicker + Classifier";
 			sourceTree = "<group>";
@@ -165,7 +165,7 @@
 			files = (
 				A0E84DA5236EA179000FA863 /* newEmojiAndCat.mlmodel in Sources */,
 				A0F452D8236D44AD00090D01 /* ImagePickerObjectDetectorViewController.swift in Sources */,
-				A0481F19236BF03D00E95502 /* ImagePcikerClassifierViewController.swift in Sources */,
+				A0481F19236BF03D00E95502 /* ImagePickerClassifierViewController.swift in Sources */,
 				A0481F15236BF03D00E95502 /* AppDelegate.swift in Sources */,
 				A0942F75236DAB6200D08ADD /* EmojiAndCatClassifier.mlmodel in Sources */,
 				A0481F17236BF03D00E95502 /* SceneDelegate.swift in Sources */,

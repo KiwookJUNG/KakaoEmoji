@@ -79,15 +79,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pvA-c0-NsK">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="783"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-Yu-O4h">
-                                <rect key="frame" x="50" y="783" width="314" height="30"/>
+                                <rect key="frame" x="284" y="733" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="0.32346960619999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2ut-LR-eLY"/>
+                                    <constraint firstAttribute="height" constant="50" id="Abl-0L-N8R"/>
+                                    <constraint firstAttribute="width" constant="100" id="d8m-kd-vbZ"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="imgPick:" destination="dL5-e0-HqX" eventType="touchUpInside" id="P2n-uX-MLd"/>
                                 </connections>
@@ -95,14 +98,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="h6H-1j-h4l" firstAttribute="bottom" secondItem="O9l-Yu-O4h" secondAttribute="bottom" id="3yW-wo-Xso"/>
-                            <constraint firstItem="h6H-1j-h4l" firstAttribute="trailing" secondItem="O9l-Yu-O4h" secondAttribute="trailing" constant="50" id="KNw-FJ-1pB"/>
-                            <constraint firstItem="pvA-c0-NsK" firstAttribute="leading" secondItem="btv-8l-cJp" secondAttribute="leading" id="RWQ-1f-pcM"/>
-                            <constraint firstItem="pvA-c0-NsK" firstAttribute="top" secondItem="btv-8l-cJp" secondAttribute="top" id="c6U-Ju-vAK"/>
-                            <constraint firstItem="O9l-Yu-O4h" firstAttribute="leading" secondItem="h6H-1j-h4l" secondAttribute="leading" constant="50" id="lKu-Zc-Wbu"/>
-                            <constraint firstAttribute="trailing" secondItem="pvA-c0-NsK" secondAttribute="trailing" id="r8e-pf-JMU"/>
-                            <constraint firstItem="O9l-Yu-O4h" firstAttribute="centerX" secondItem="btv-8l-cJp" secondAttribute="centerX" id="rZj-lp-jU5"/>
-                            <constraint firstItem="O9l-Yu-O4h" firstAttribute="top" secondItem="pvA-c0-NsK" secondAttribute="bottom" priority="750" id="ytI-lK-O9d"/>
+                            <constraint firstItem="pvA-c0-NsK" firstAttribute="top" secondItem="btv-8l-cJp" secondAttribute="top" id="PVF-3C-w99"/>
+                            <constraint firstItem="h6H-1j-h4l" firstAttribute="trailing" secondItem="O9l-Yu-O4h" secondAttribute="trailing" constant="30" id="TPE-AS-JBW"/>
+                            <constraint firstItem="pvA-c0-NsK" firstAttribute="leading" secondItem="btv-8l-cJp" secondAttribute="leading" id="VZ4-Eb-gfq"/>
+                            <constraint firstItem="h6H-1j-h4l" firstAttribute="bottom" secondItem="O9l-Yu-O4h" secondAttribute="bottom" constant="30" id="g7z-mI-N1f"/>
+                            <constraint firstItem="pvA-c0-NsK" firstAttribute="trailing" secondItem="btv-8l-cJp" secondAttribute="trailing" id="myb-8e-ybu"/>
+                            <constraint firstItem="pvA-c0-NsK" firstAttribute="bottom" secondItem="h6H-1j-h4l" secondAttribute="bottom" id="qYC-yw-pvD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h6H-1j-h4l"/>
                     </view>
