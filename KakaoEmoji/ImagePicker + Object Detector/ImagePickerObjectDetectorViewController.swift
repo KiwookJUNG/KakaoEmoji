@@ -127,7 +127,6 @@ extension ImagePickerObjectDetector {
         let handler = VNImageRequestHandler(ciImage: image, options: [:])
         DispatchQueue.global(qos: .userInitiated).async {
             try? handler.perform([request])
-            print("실행")
         }
         
         
