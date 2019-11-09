@@ -17,7 +17,7 @@ class ImagePickerObjectDetector: UIViewController {
     var imgWidth : Int = 0
     var imgHeight : Int = 0
     
-    let korean = Transrator().translator
+    let korean = Translator().translator
     
     @IBOutlet weak var btnName: UIButton!
     
@@ -30,6 +30,8 @@ class ImagePickerObjectDetector: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
  
+        self.imgWidth = Int(self.view.bounds.size.width)
+        self.imgHeight = Int(self.view.bounds.size.height - 50)
     
         albumPicker.allowsEditing = false
         albumPicker.delegate = self
@@ -55,10 +57,7 @@ extension ImagePickerObjectDetector: UINavigationControllerDelegate, UIImagePick
            }
         
            self.imgView.image = image
-        
-           self.imgWidth = Int(self.view.bounds.size.width)
-           self.imgHeight = Int(self.view.bounds.size.height - 50)
-           
+       
            guard let ciImage = CIImage(image: image) else {
                fatalError("UIImage를 CIImage로 전환할 수 없습니다.")
            }
@@ -98,19 +97,20 @@ extension ImagePickerObjectDetector {
             for objectObservation in results {
                 let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, self?.imgWidth ?? 0, self?.imgHeight ?? 0)
                     
-                    print(objectObservation.boundingBox)
-                    print(objectObservation.confidence)
+                    //print(objectObservation.boundingBox)
+                    //print(objectObservation.confidence)]
+                    //print(objectBounds)
                     
                 guard let nameIdentifier = objectObservation.labels.first?.identifier, let koreanName = self?.korean[nameIdentifier] else {
                         return
                 }
                     
-                guard let shapeLayer = self?.createRoundedRectLayerWithBounds(bounds: objectBounds, name: nameIdentifier) else {
+                guard let shapeLayer = self?.createRoundedRectLayerWithBounds(bounds: objectBounds, name: nameIdentifier) else{
                         return
                 }
          
                     
-                    DispatchQueue.main.async { [weak self] in
+                    DispatchQueue.main.async {
                         //print(firstItem.labels.first?.identifier)
                         self?.btnName.setTitle(koreanName, for: .normal)
                         self?.imgView.layer.addSublayer(shapeLayer)
@@ -141,9 +141,12 @@ extension ImagePickerObjectDetector {
             color = boxColor(emojiOrCat)
         }
 
+        //print(bounds.origin.x)
+        //print(bounds.origin.y)
+        //print(CGPoint(x: bounds.midX, y: bounds.midY))
         shapeLayer.bounds = bounds
         shapeLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
-        shapeLayer.name = "Found Object"
+       
         //shapeLayer.backgroundColor = color
         shapeLayer.borderWidth = 10.0
         shapeLayer.borderColor = color

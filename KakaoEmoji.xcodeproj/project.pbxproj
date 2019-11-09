@@ -13,10 +13,9 @@
 		A0481F1C236BF03D00E95502 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0481F1A236BF03D00E95502 /* Main.storyboard */; };
 		A0481F1E236BF04000E95502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0481F1D236BF04000E95502 /* Assets.xcassets */; };
 		A0481F21236BF04000E95502 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0481F1F236BF04000E95502 /* LaunchScreen.storyboard */; };
-		A0942F75236DAB6200D08ADD /* EmojiAndCatClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A0942F74236DAB6200D08ADD /* EmojiAndCatClassifier.mlmodel */; };
-		A0E84DAA237047F8000FA863 /* Transrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E84DA9237047F8000FA863 /* Transrator.swift */; };
+		A09B5375237650580094EA33 /* newEmojiAndCat.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A09B5374237650580094EA33 /* newEmojiAndCat.mlmodel */; };
+		A0E84DAA237047F8000FA863 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E84DA9237047F8000FA863 /* Translator.swift */; };
 		A0F452D8236D44AD00090D01 /* ImagePickerObjectDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F452D7236D44AD00090D01 /* ImagePickerObjectDetectorViewController.swift */; };
-		A0FBCB4E2373C776009EAF01 /* newEmojiAndCat.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A0FBCB4D2373C776009EAF01 /* newEmojiAndCat.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +27,9 @@
 		A0481F1D236BF04000E95502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0481F20236BF04000E95502 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0481F22236BF04000E95502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0942F74236DAB6200D08ADD /* EmojiAndCatClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = EmojiAndCatClassifier.mlmodel; path = "../../../../Emoji&Cat.mlproj/Models/EmojiAndCatClassifier.mlmodel"; sourceTree = "<group>"; };
-		A0E84DA9237047F8000FA863 /* Transrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transrator.swift; sourceTree = "<group>"; };
+		A09B5374237650580094EA33 /* newEmojiAndCat.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = newEmojiAndCat.mlmodel; sourceTree = "<group>"; };
+		A0E84DA9237047F8000FA863 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		A0F452D7236D44AD00090D01 /* ImagePickerObjectDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerObjectDetectorViewController.swift; sourceTree = "<group>"; };
-		A0FBCB4D2373C776009EAF01 /* newEmojiAndCat.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = newEmojiAndCat.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +62,7 @@
 		A0481F13236BF03D00E95502 /* KakaoEmoji */ = {
 			isa = PBXGroup;
 			children = (
+				A09B5374237650580094EA33 /* newEmojiAndCat.mlmodel */,
 				A0E84DA6237047C8000FA863 /* Model */,
 				A0F452D6236D439000090D01 /* ImagePicker + Object Detector */,
 				A0F452D2236D42AC00090D01 /* ImagePicker + Classifier */,
@@ -80,7 +79,7 @@
 		A0E84DA6237047C8000FA863 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A0E84DA9237047F8000FA863 /* Transrator.swift */,
+				A0E84DA9237047F8000FA863 /* Translator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -88,7 +87,6 @@
 		A0F452D2236D42AC00090D01 /* ImagePicker + Classifier */ = {
 			isa = PBXGroup;
 			children = (
-				A0942F74236DAB6200D08ADD /* EmojiAndCatClassifier.mlmodel */,
 				A0481F18236BF03D00E95502 /* ImagePickerClassifierViewController.swift */,
 			);
 			path = "ImagePicker + Classifier";
@@ -97,7 +95,6 @@
 		A0F452D6236D439000090D01 /* ImagePicker + Object Detector */ = {
 			isa = PBXGroup;
 			children = (
-				A0FBCB4D2373C776009EAF01 /* newEmojiAndCat.mlmodel */,
 				A0F452D7236D44AD00090D01 /* ImagePickerObjectDetectorViewController.swift */,
 			);
 			path = "ImagePicker + Object Detector";
@@ -175,11 +172,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0F452D8236D44AD00090D01 /* ImagePickerObjectDetectorViewController.swift in Sources */,
-				A0FBCB4E2373C776009EAF01 /* newEmojiAndCat.mlmodel in Sources */,
-				A0E84DAA237047F8000FA863 /* Transrator.swift in Sources */,
+				A0E84DAA237047F8000FA863 /* Translator.swift in Sources */,
 				A0481F19236BF03D00E95502 /* ImagePickerClassifierViewController.swift in Sources */,
+				A09B5375237650580094EA33 /* newEmojiAndCat.mlmodel in Sources */,
 				A0481F15236BF03D00E95502 /* AppDelegate.swift in Sources */,
-				A0942F75236DAB6200D08ADD /* EmojiAndCatClassifier.mlmodel in Sources */,
 				A0481F17236BF03D00E95502 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,7 @@ class ImagePickerClassifierViewController: UIViewController {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var confidenceLbl: UILabel!
     
-    let korean = Transrator().translator
+    let korean = Translator().translator
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +83,7 @@ extension ImagePickerClassifierViewController {
             }
            
             guard let objectObservation = results.first?.labels.first else {
-                DispatchQueue.main.async { [weak self] in
+                DispatchQueue.main.async { 
                     self?.nameLbl.text = "인식된 물체 없음"
                     self?.confidenceLbl.text = "0.00"
                 }
@@ -94,7 +94,7 @@ extension ImagePickerClassifierViewController {
             }
             
             
-            DispatchQueue.main.async { [weak self] in
+            DispatchQueue.main.async {
                 self?.nameLbl.text = koreanName
                 self?.confidenceLbl.text = String(objectObservation.confidence)
             }
